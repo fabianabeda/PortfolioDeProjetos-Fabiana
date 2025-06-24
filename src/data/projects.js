@@ -32,19 +32,17 @@ export const projectsData = {
     technologies: ['Node.js', 'React', 'MongoDB', 'APIs'],
     description: 'Sistema analítico para monitoramento de licitações públicas, com backend em Node.js, frontend em React e banco de dados MongoDB. Integrado a APIs públicas do PNCP, o projeto foi registrado no INPI e hospedado via Netlify.',
     fullDescription: `
-      Projeto desenvolvido no Mestrado Profissional em Tecnologia da Informação do IFPB, com foco em soluções analíticas aplicadas ao setor público. O <strong>LicitTrack</strong> surgiu para solucionar a dificuldade enfrentada por gestores públicos, pesquisadores e fornecedores ao acessarem informações sobre licitações. Os dados disponíveis no <strong>Portal Nacional de Contratações Públicas (PNCP)</strong> eram fragmentados, inconsistentes e pouco acessíveis para análise. A proposta do projeto foi consolidar essas informações em uma plataforma analítica única e interativa.
+      <strong>Projeto desenvolvido no Mestrado Profissional em Tecnologia da Informação do IFPB</strong>, com foco em soluções analíticas aplicadas ao setor público. O <strong>LicitTrack</strong> surgiu para solucionar a dificuldade enfrentada por gestores públicos, pesquisadores e fornecedores ao acessarem informações sobre licitações. Os dados disponíveis no <strong>Portal Nacional de Contratações Públicas (PNCP)</strong> eram fragmentados, inconsistentes e pouco acessíveis para análise. A proposta do projeto foi consolidar essas informações em uma plataforma analítica única e interativa.
 
-A solução técnica envolveu a construção de um <strong>pipeline de dados</strong> com extração via múltiplos endpoints da API do PNCP. Para acelerar o processo, implementamos requisições paralelas que otimizam o tempo de coleta. Após a extração, os dados JSON foram padronizados e armazenados em um banco <strong>MongoDB</strong>, estruturado para consultas analíticas e suporte a dados aninhados.
+Para isso, foi necessário estruturar uma solução tecnológica capaz de automatizar a coleta, tratamento e visualização dos dados de licitações públicas. O desafio incluía lidar com grande volume de dados distribuídos em múltiplos endpoints e com formatos variados.
 
-Com os dados modelados, desenvolvemos um painel frontend em <strong>React + Tailwind CSS</strong>. O dashboard oferece visualização por indicadores <strong>estratégicos</strong> (valor licitado, evolução anual), <strong>táticos</strong> (modalidades e órgãos contratantes) e <strong>operacionais</strong> (status de licitações, itens mais licitados). O sistema é responsivo, interativo e pensado para autoatendimento (self-service BI).
+A solução foi a construção de um <strong>pipeline de dados</strong>, com extração automatizada via <strong>API REST do PNCP</strong>. Como os dados estavam dispersos em diversos endpoints, implementamos <strong>requisições paralelas em Python</strong> para acelerar o processo. Após a coleta, os dados no formato <strong>JSON</strong> foram tratados e padronizados utilizando <strong>dicionários em Python</strong> e armazenados no <strong>MongoDB</strong>, respeitando sua estrutura aninhada para facilitar consultas analíticas.
 
-Uma das seções do painel permite a análise dos <strong>fornecedores participantes</strong> nas licitações, com visualização do número de empresas por ano, tipo jurídico e ranking dos maiores participantes. Essa funcionalidade fornece insights valiosos para tomada de decisão e análise de mercado público.
+Com os dados organizados, foram definidos <strong>indicadores-chave de performance (KPIs)</strong> nos níveis estratégico, tático e operacional. Em seguida, desenvolvemos um <strong>painel interativo</strong> com <strong>React</strong> e <strong>Tailwind CSS</strong>, apresentando informações como <strong>valor total licitado</strong>, <strong>evolução por ano</strong>, <strong>principais órgãos contratantes</strong>, <strong>itens mais licitados</strong> e <strong>status das licitações</strong> — tudo com foco na experiência do usuário e autoatendimento.
 
-O sistema também oferece um painel para a <strong>análise dos itens mais licitados</strong>, permitindo observar quais produtos ou serviços concentram maiores volumes em contratos públicos. Os dados são filtráveis por localidade e ano, com totalização e ordenação automática dos valores licitados.
+Mesmo sem uma equipe formal de governança de dados, adotamos boas práticas no tratamento: mantivemos os dados brutos em uma etapa intermediária, padronizamos campos e nomenclaturas e aplicamos <strong>índices no MongoDB</strong> para garantir performance nas consultas.
 
-O <strong>LicitTrack</strong> foi <strong>registrado no Instituto Nacional da Propriedade Industrial (INPI)</strong>, o que reforça sua originalidade e caráter inovador. Esse reconhecimento formal fortalece a relevância do projeto como solução tecnológica aplicada à gestão pública e à transparência.
-
-O projeto visa facilitar o acesso e análise de dados públicos, promovendo transparência e eficiência. O desenvolvimento do LicitTrack envolveu o uso de diversas tecnologias modernas.
+Como resultado, o <strong>LicitTrack</strong> tornou-se uma ferramenta robusta para análise de licitações públicas, promovendo transparência e inteligência analítica na gestão pública. O projeto foi <strong>registrado no Instituto Nacional da Propriedade Industrial (INPI)</strong>, reconhecendo sua originalidade e potencial inovador.
     `,
     features: [
       'Pipeline de dados com extração via API do PNCP',
@@ -74,22 +72,19 @@ O projeto visa facilitar o acesso e análise de dados públicos, promovendo tran
     technologies: ['Apache Airflow', 'MinIO', 'PostgreSQL', 'Power BI'],
     description: 'Pipeline construído com dados das APIs AQICN (qualidade do ar) e MapBiomas (uso do solo). Utilizou Airflow para orquestração, MinIO para armazenamento, Spark para processamento e PostgreSQL para carga de dados.',
     fullDescription: `
-     Este projeto representa uma solução completa de engenharia de dados voltada para a análise de informações ambientais. O objetivo principal foi criar um pipeline robusto e escalável que integrasse dados de diferentes fontes relacionadas ao meio ambiente, permitindo análises abrangentes sobre qualidade do ar e uso do solo.
+     <strong>Projeto desenvolvido no Mestrado Profissional em Tecnologia da Informação do IFPB</strong>, na disciplina de <strong>Integração de Dados</strong>, com foco na aplicação de práticas de engenharia de dados para questões ambientais. O projeto <strong>Integração de Dados Ambientais</strong> teve como objetivo consolidar informações sobre qualidade do ar e uso do solo, permitindo análises mais precisas sobre os impactos ambientais em áreas urbanas.
 
-A arquitetura do projeto foi construída seguindo as melhores práticas de engenharia de dados, utilizando <strong>Apache Airflow</strong> como orquestrador principal. O Airflow gerencia todo o fluxo de trabalho, desde a extração dos dados até a disponibilização final para análise, garantindo execução programada, monitoramento e tratamento de falhas.
+Embora os dados estivessem publicamente disponíveis, eles se encontravam em formatos distintos, em fontes separadas, e de difícil integração. Nosso desafio foi criar uma arquitetura robusta que automatizasse a coleta, padronização e análise desses dados, tornando-os acessíveis para estudos e decisões estratégicas em políticas ambientais.
 
-Para a <strong>extração de dados</strong>, foram utilizadas duas APIs principais: <strong>AQICN</strong> (Air Quality Index China Network) para dados de qualidade do ar e <strong>MapBiomas</strong> para informações sobre uso e cobertura do solo. Essas APIs fornecem dados atualizados e confiáveis sobre condições ambientais em diferentes regiões.
+Construímos um <strong>pipeline de dados escalável e automatizado</strong> utilizando o <strong>Apache Airflow</strong> como orquestrador principal. O Airflow coordenou o processo de extração, transformação e carga, com monitoramento e tratamento de falhas. A <strong>extração de dados</strong> foi realizada por meio de duas APIs: <strong>AQICN</strong>, que fornece dados de qualidade do ar, e <strong>MapBiomas</strong>, que disponibiliza informações sobre uso e cobertura do solo.
 
-O <strong>armazenamento</strong> foi implementado utilizando <strong>MinIO</strong>, uma solução de object storage compatível com Amazon S3. O MinIO oferece alta disponibilidade, escalabilidade e segurança para o armazenamento de grandes volumes de dados ambientais em formato bruto e processado.
+Os dados coletados foram armazenados em um <strong>Data Lake baseado no MinIO</strong>, organizado em camadas <strong>Raw</strong>, <strong>Staging</strong> e <strong>Trusted</strong>, garantindo rastreabilidade, versionamento e controle de qualidade. Em seguida, utilizamos o <strong>Apache Spark</strong> para processar grandes volumes de dados, convertendo arquivos <strong>JSON</strong> em <strong>Parquet</strong>, realizando transformações, enriquecimentos e agregações necessárias para análise.
 
-Para o <strong>processamento</strong> dos dados, foi utilizado <strong>Apache Spark</strong>, que permite o processamento distribuído de grandes volumes de dados. O Spark realiza transformações, limpeza, agregações e enriquecimento dos dados, preparando-os para análise.
+Após o processamento, os dados foram carregados em um banco <strong>PostgreSQL</strong> modelado com foco em <strong>consultas analíticas</strong>. Para a <strong>visualização</strong>, desenvolvemos dashboards no <strong>Power BI</strong> com indicadores ambientais como <strong>níveis de poluição por região</strong>, <strong>mudanças no uso do solo</strong> e <strong>identificação de áreas de queimadas</strong>.
 
-A <strong>carga</strong> dos dados processados é realizada em um banco <strong>PostgreSQL</strong>, estruturado com um modelo dimensional otimizado para consultas analíticas. O PostgreSQL oferece robustez, performance e suporte a consultas complexas necessárias para análises ambientais.
+Todo o ambiente foi <strong>containerizado com Docker</strong>, assegurando reprodutibilidade, escalabilidade e facilidade de implantação em diferentes contextos.
 
-Para a <strong>visualização</strong> e análise dos dados, foi desenvolvido um conjunto de dashboards em <strong>Power BI</strong>. Esses painéis permitem análises interativas sobre tendências de qualidade do ar, mudanças no uso do solo, correlações entre diferentes indicadores ambientais e identificação de padrões temporais e geográficos.
-
-O projeto demonstra a aplicação prática de conceitos de Big Data e Data Engineering em problemas ambientais reais, contribuindo para o monitoramento e análise de questões ecológicas importantes.
-
+Como resultado, conseguimos transformar dados desconexos em <strong>insights ambientais claros e acessíveis</strong>, promovendo o uso inteligente de dados públicos e aplicando práticas modernas de engenharia e governança de dados para apoiar decisões em prol do meio ambiente.
     `,
     features: [
       'Orquestração com Apache Airflow',
@@ -99,9 +94,7 @@ O projeto demonstra a aplicação prática de conceitos de Big Data e Data Engin
       'Banco de dados PostgreSQL otimizado',
       'Dashboards interativos em Power BI',
       'Modelo dimensional para análises',
-      'Monitoramento de qualidade do ar',
-      'Análise de uso e cobertura do solo',
-      'Pipeline automatizado e monitorado'
+      'Análises ambientais de qualidade do ar e uso do solo'
     ],
   images: [
     desm,
@@ -122,22 +115,15 @@ O projeto demonstra a aplicação prática de conceitos de Big Data e Data Engin
     technologies: ['Power BI', 'Pentaho', 'SQL'],
     description: 'Projeto acadêmico voltado ao setor comercial de uma empresa fictícia. Envolveu o uso do Power BI e Pentaho Data Integration para modelagem dimensional e criação de dashboards interativos.',
     fullDescription: `
-      O <strong>Northwind Analytics</strong> é um projeto acadêmico abrangente que demonstra a aplicação de conceitos de Business Intelligence em um cenário comercial real. Utilizando a base de dados clássica Northwind, que simula uma empresa de comércio internacional, o projeto desenvolveu uma solução completa de BI para análise de vendas, clientes, produtos e operações.
+      O projeto <strong>Northwind Analytics</strong> foi desenvolvido na disciplina <strong>Inteligência Empresarial</strong> do curso de <strong>Tecnologia em Sistemas para Internet</strong> no <strong>IFPB</strong>, com o objetivo de aplicar conceitos de <strong>Business Intelligence</strong> em um cenário comercial simulado.
 
-O projeto começou com uma análise detalhada dos requisitos de negócio, identificando as principais necessidades de informação dos gestores comerciais. Foram definidos indicadores-chave de performance (KPIs) relacionados a vendas, lucratividade, performance de produtos, análise de clientes e eficiência operacional.
+Utilizando a base de dados <strong>Northwind</strong>, que representa uma empresa fictícia de comércio internacional, a proposta foi transformar dados operacionais brutos em informações relevantes para o suporte à tomada de decisão. A empresa possuía registros dispersos e não estruturados, dificultando análises estratégicas e gerenciais.
 
-Para a <strong>modelagem dimensional</strong>, foi utilizado o <strong>Pentaho Data Integration (PDI)</strong>, uma ferramenta ETL robusta e open-source. O PDI foi responsável por extrair dados do sistema transacional, aplicar transformações necessárias e carregar as informações em um data warehouse estruturado seguindo o modelo dimensional de Kimball.
+A solução foi construída com o <strong>Pentaho Data Integration (PDI)</strong>, responsável por todo o processo de <strong>ETL</strong>: extração dos dados do sistema transacional, aplicação de regras de negócio, tratamento e carga para um <strong>Data Warehouse</strong> modelado em estrela. A estrutura incluiu uma <strong>tabela fato</strong> de vendas e <strong>tabelas dimensão</strong> como Cliente, Produto, Funcionário, Tempo e Região.
 
-A arquitetura do data warehouse incluiu a criação de <strong>tabelas fato</strong> para vendas, pedidos e devoluções, além de <strong>tabelas dimensão</strong> para clientes, produtos, funcionários, fornecedores, tempo e geografia. Essa estrutura otimizada permite consultas rápidas e análises multidimensionais.
+Para análise e visualização dos dados, desenvolvemos <strong>dashboards interativos</strong> no <strong>Power BI</strong>, contemplando <strong>indicadores estratégicos, táticos e operacionais</strong>. Entre os principais insights entregues estão o <strong>faturamento por período e por região</strong>, <strong>análise de desempenho de produtos</strong>, <strong>ticket médio por cliente</strong> e <strong>acompanhamento de metas comerciais</strong>.
 
-Os <strong>dashboards interativos</strong> foram desenvolvidos no <strong>Power BI</strong>, oferecendo visualizações intuitivas e insights acionáveis. Os painéis incluem análises de vendas por período, performance de produtos, segmentação de clientes, análise geográfica de vendas, e monitoramento de metas comerciais.
-
-O projeto implementou funcionalidades avançadas como <strong>drill-down</strong> e <strong>drill-through</strong>, permitindo aos usuários navegar entre diferentes níveis de detalhe. Também foram criados filtros dinâmicos, segmentadores e indicadores visuais que facilitam a exploração dos dados.
-
-Foram desenvolvidas análises específicas como <strong>análise de coorte</strong> para entender o comportamento de retenção de clientes, <strong>análise ABC</strong> para classificação de produtos por importância, e <strong>análise de tendências</strong> para identificar padrões sazonais nas vendas.
-
-O projeto demonstra proficiência em todo o ciclo de vida de um projeto de BI, desde a análise de requisitos até a entrega de soluções analíticas que suportam a tomada de decisão estratégica e operacional.
-
+O projeto demonstrou domínio completo do <strong>ciclo de vida de uma solução de BI</strong> — desde a identificação de requisitos até a entrega de um <strong>sistema analítico funcional</strong>, com foco em clareza, desempenho e autonomia para os usuários finais.
 
     `,
     features: [
@@ -149,11 +135,8 @@ O projeto demonstra proficiência em todo o ciclo de vida de um projeto de BI, d
       'Segmentação e análise de clientes',
       'Performance de produtos e fornecedores',
       'Análise geográfica de vendas',
-      'KPIs e indicadores comerciais',
-      'Drill-down e drill-through',
-      'Análise de coorte e ABC',
-      'Identificação de tendências sazonais'
-    ],
+      'KPIs e indicadores comerciais'
+    ],    
     images: [
       north,
       north1,
