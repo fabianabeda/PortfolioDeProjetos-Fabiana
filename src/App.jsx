@@ -283,44 +283,52 @@ function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                className="h-full"
               >
-                <Card className="bg-slate-800/50 border-purple-500/20 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300 h-full group">
-                  <CardHeader>
-                    <div className="flex justify-between items-start mb-2">
-                      <CardTitle className="text-xl text-white group-hover:text-purple-400 transition-colors">
-                        {project.title}
-                      </CardTitle>
-                      <Badge variant="outline" className="border-purple-400/50 text-purple-300">
-                        {project.category}
-                      </Badge>
-                    </div>
-                    <CardDescription className="text-gray-400 leading-relaxed text-justify">
-                      {project.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.map((tech) => (
-                        <Badge 
-                          key={tech}
-                          variant="secondary" 
-                          className="bg-purple-600/20 text-purple-300 border-purple-400/30 text-xs"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                    <Link to={`/projeto/${project.id}`}>
-                      <Button 
-                        variant="outline" 
-                        className="w-full border-purple-400/50 text-purple-400 hover:bg-purple-400 hover:text-white"
-                      >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Ver Detalhes
-                      </Button>
-                    </Link>
-                  </CardContent>
-                </Card>
+            
+            <Card className="bg-slate-800/50 border-purple-500/20 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300 h-full flex flex-col">
+              <CardHeader className="mb-4">
+                <div className="flex justify-between items-start mb-2">
+                  <CardTitle className="text-xl text-white group-hover:text-purple-400 transition-colors">
+                    {project.title}
+                  </CardTitle>
+                  <Badge variant="outline" className="border-purple-400/50 text-purple-300">
+                    {project.category}
+                  </Badge>
+                </div>
+                <CardDescription className="text-gray-400 leading-relaxed text-justify">
+                  {project.description}
+                </CardDescription>
+              </CardHeader>
+
+              <CardContent className="flex-grow">
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.map((tech) => (
+                    <Badge 
+                      key={tech}
+                      variant="secondary" 
+                      className="bg-purple-600/20 text-purple-300 border-purple-400/30 text-xs"
+                    >
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+
+  {/* Botão posicionado no final com margin-top automático */}
+  <div className="mt-auto px-6 pb-6">
+    <Link to={`/projeto/${project.id}`}>
+      <Button 
+        variant="outline" 
+        className="w-full border-purple-400/50 text-purple-400 hover:bg-purple-400 hover:text-white"
+      >
+        <ExternalLink className="w-4 h-4 mr-2" />
+        Ver Detalhes
+      </Button>
+    </Link>
+  </div>
+</Card>
+
               </motion.div>
             ))}
           </div>
