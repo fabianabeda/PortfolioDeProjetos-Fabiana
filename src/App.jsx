@@ -294,7 +294,7 @@ function App() {
                         {project.category}
                       </Badge>
                     </div>
-                    <CardDescription className="text-gray-400 leading-relaxed">
+                    <CardDescription className="text-gray-400 leading-relaxed text-justify">
                       {project.description}
                     </CardDescription>
                   </CardHeader>

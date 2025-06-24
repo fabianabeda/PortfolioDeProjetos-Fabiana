@@ -139,11 +139,13 @@ function ProjectDetail() {
                 </CardHeader>
                 <CardContent className="prose prose-invert max-w-none">
                   <div className="text-gray-300 leading-relaxed space-y-4">
-                    {project.fullDescription.split('\n\n').map((paragraph, index) => (
-                      <p key={index} className="text-lg">
-                        {paragraph.trim()}
-                      </p>
-                    ))}
+                  {project.fullDescription.split('\n\n').map((paragraph, index) => (
+                    <p
+                      key={index}
+                      className="text-lg text-justify"
+                      dangerouslySetInnerHTML={{ __html: paragraph.trim() }}
+                    />
+                  ))}
                   </div>
                 </CardContent>
               </Card>
